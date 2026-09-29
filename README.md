@@ -1,16 +1,14 @@
-## Hi there 👋
+# 👋 Hi, I'm Arnav | Future Penetration Tester
 
-<!--
-**hyperphoton-sec/hyperphoton-sec** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🚀 Managing a high-velocity sprint to master the core pillars of Systems Engineering and Offensive Security.
 
-Here are some ideas to get you started:
+### 🛡️ Core Targets & Focus Fields:
+- **Foundational Infrastructure:** Mastering the TryHackMe Pre-Security Learning Path.
+- **Active Milestones:** Network Architecture, Windows/Linux CLI Basics, Data Representation & Advanced Data Encoding formats.
+- **Current Sprint:** Low-level programming fundamentals, script automation, and exploit logic.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 📈 Verified Execution Progress:
+- 🔥 **TryHackMe Continuous Streak:** 8 Days and compounding daily!
+- 🏆 **Competitive Standings:** Actively climbing positions within the Bronze League grid.
+
+*"Consistency defeats talent every single day. Constructing the absolute baseline to secure the horizon."*
