@@ -44,3 +44,13 @@
 - Attackers type malicious database commands straight into normal website login boxes. [IMPORTANT CONCEPT]
 - If the website code is weak, the database runs the hacker's input as real code. [MUST REMEMBER]
 - This trick lets hackers steal entire lists of passwords or log in as the Admin without a password. [MUST REMEMBER]
+
+### 🌐 DNS Infrastructure & Record Layout
+
+#### 📞 The Global Phonebook:
+- `A Record`: Connects a website name directly to a standard IPv4 address. [MUST REMEMBER FOR CYBERSECURITY]
+- `CNAME Record`: A nickname that points a website name to another website name instead of a number. [MUST REMEMBER FOR CYBERSECURITY]
+- `Recursive DNS Server`: The middleman server (usually run by your ISP) that searches the web to find your website numbers. [IMPORTANT CONCEPT]
+- `Authoritative DNS Server`: The master server that holds the final, official list of records for a domain. [MUST REMEMBER FOR CYBERSECURITY]
+- `TTL (Time To Live)`: The exact expiration timer in seconds that tells your PC how long to save a website address before deleting it. [MUST REMEMBER FOR CYBERSECURITY]
+
