@@ -31,3 +31,16 @@
 - `while (condition)` loop: An automation engine that keeps repeating blocks of code infinitely as long as the condition stays true. [IMPORTANT CONCEPT]
 - `!==` symbol: This means **"Strictly Not Equal To"**. It evaluates both the value and data type to make sure things are completely different. [MUST REMEMBER]
 - Infinite Loop Crash: If you forget to update your tracking variables inside a `while` loop, the code runs forever and freezes the server (used in Denial of Service attacks). [MUST REMEMBER]
+
+
+### 🛢️ SQL Basics & Database Structure
+
+#### 📊 How Databases Work:
+- Columns vs Rows: Columns go straight up and down (like a list of Usernames). Rows go left to right (like one single user's profile info). [MUST REMEMBER]
+- `SELECT`: This command tells the database exactly **WHAT** column data you want to see. [IMPORTANT CONCEPT]
+- `FROM`: This command tells the database **WHERE** the table is hidden. [IMPORTANT CONCEPT]
+
+#### 🎯 How Hackers Attack It (SQL Injection):
+- Attackers type malicious database commands straight into normal website login boxes. [IMPORTANT CONCEPT]
+- If the website code is weak, the database runs the hacker's input as real code. [MUST REMEMBER]
+- This trick lets hackers steal entire lists of passwords or log in as the Admin without a password. [MUST REMEMBER]
