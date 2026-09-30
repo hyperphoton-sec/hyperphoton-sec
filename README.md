@@ -27,3 +27,7 @@
 - `try` and `finally`: A `try` block stops your hacking tools from crashing if there is an error. A `finally` block is the cleanup crew that closes open connections no matter what happens. [IMPORTANT CONCEPT]
 
 
+#### 🔁 Loop Control & Brute-Forcing:
+- `while (condition)` loop: An automation engine that keeps repeating blocks of code infinitely as long as the condition stays true. [IMPORTANT CONCEPT]
+- `!==` symbol: This means **"Strictly Not Equal To"**. It evaluates both the value and data type to make sure things are completely different. [MUST REMEMBER]
+- Infinite Loop Crash: If you forget to update your tracking variables inside a `while` loop, the code runs forever and freezes the server (used in Denial of Service attacks). [MUST REMEMBER]
