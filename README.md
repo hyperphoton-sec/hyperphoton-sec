@@ -12,3 +12,18 @@
 - 🏆 **Competitive Standings:** Actively climbing positions within the Bronze League grid.
 
 *"Consistency defeats talent every single day. Constructing the absolute baseline to secure the horizon."*
+
+
+### 🧠 Simple Hacker Knowledge Logs
+
+#### 🐍 Python Basics:
+- `while` loop: This is a repeat button. It keeps running code over and over as long as a condition is true. [IMPORTANT CONCEPT]
+- `!=` symbol: This simply means **"Does Not Equal"**. [MUST REMEMBER]
+- Indentation (Spaces): Python needs correct spaces on the left side. One wrong space will crash your script. [MUST REMEMBER]
+
+#### 🌐 JavaScript Basics:
+- `let` vs `const`: Use `let` for variables that can change (like your score). Use `const` for locked numbers that never change (like a target IP address). [MUST REMEMBER]
+- `||` symbol: This means **"OR"**. The computer checks if condition A OR condition B is true. [MUST REMEMBER]
+- `try` and `finally`: A `try` block stops your hacking tools from crashing if there is an error. A `finally` block is the cleanup crew that closes open connections no matter what happens. [IMPORTANT CONCEPT]
+
+
