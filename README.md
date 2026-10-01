@@ -54,3 +54,16 @@
 - `Authoritative DNS Server`: The master server that holds the final, official list of records for a domain. [MUST REMEMBER FOR CYBERSECURITY]
 - `TTL (Time To Live)`: The exact expiration timer in seconds that tells your PC how long to save a website address before deleting it. [MUST REMEMBER FOR CYBERSECURITY]
 
+
+### 🕸️ Day 3: LAN Topologies & Local Hardware Framework
+
+#### 📐 Network Layout Shapes:
+- Star Topology: Every device hooks into one main central Switch box. It is the most reliable, modern design used everywhere today. [MUST REMEMBER FOR CYBERSECURITY]
+- Bus Topology: All devices share one straight main cable line. If that single line snaps, the entire network drops. [IMPORTANT CONCEPT]
+- Ring Topology: Devices connect in a giant circle. If even one device fails, the whole loop breaks down instantly. [IMPORTANT CONCEPT]
+- Single Point of Failure: A structural weakness where a single hardware crash (like a main switch dying) completely kills the entire network. [MUST REMEMBER FOR CYBERSECURITY]
+
+#### 🔌 Smart Infrastructure Boxes:
+- Switch: A smart box that checks MAC addresses and forwards data ONLY to the exact device port intended, keeping internal local traffic quiet and clean. [MUST REMEMBER FOR CYBERSECURITY]
+- Router: A digital bridge that connects completely separate networks together and routes packets across the internet. [MUST REMEMBER FOR CYBERSECURITY]
+
