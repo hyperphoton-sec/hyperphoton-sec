@@ -85,4 +85,13 @@
   4. Acknowledge / ACK (Server validation finaly making the client live)
 - Rogue DHCP Exploit: A critical attack vector where an imposter server replies to a client's Discover broadcast first, forcing target traffic to route directly through a hacker's terminal. [MUST REMEMBER FOR CYBERSECURITY]
 
+- #### 🪜 OSI Model Architecture (Layers 1 - 3):
+- Open Systems Interconnection (OSI): A 7-layer universal blueprint framework dictating how all networked devices send, receive, and interpret data. [MUST REMEMBER FOR CYBERSECURITY]
+- Encapsulation: The systematic process of sealing data inside protective technical containers (adding control headers/footers) as it moves down the network stack. [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 1 (Physical): The absolute baseline level where physical hardware equipment, copper cords, fiber optic lines, and raw binary signals (bits) live. [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 2 (Data Link): The physical addressing layer running on Network Interface Cards (NICs). Stamped with manufacturer-burned MAC addresses. Data unit is strictly called a **Frame**. [MUST REMEMBER FOR CYBERSECURITY]
+- MAC Spoofing: An offensive software tactic used to alter a network card's apparent hardware ID to bypass MAC filtering rules or impersonate trusted endpoints. [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 3 (Network): The global logical routing floor operating via unique IP Addresses. Data unit is strictly called a **Packet**. [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 3 Devices (Routers): Specialized hardware nodes that inspect packet IP headers and execute optimal path calculations using protocols like OSPF and RIP. [MUST REMEMBER FOR CYBERSECURITY]
+
 
