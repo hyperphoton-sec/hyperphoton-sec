@@ -67,3 +67,22 @@
 - Switch: A smart box that checks MAC addresses and forwards data ONLY to the exact device port intended, keeping internal local traffic quiet and clean. [MUST REMEMBER FOR CYBERSECURITY]
 - Router: A digital bridge that connects completely separate networks together and routes packets across the internet. [MUST REMEMBER FOR CYBERSECURITY]
 
+
+### 🌐 Day 4: Subnet Segmentation & The DHCP DORA Loop
+
+#### 🛡️ Advanced Network Segmentation:
+- Subnetting: Slicing a massive network space into quiet, isolated miniature rooms to maximize security and control the blast radius. [MUST REMEMBER FOR CYBERSECURITY]
+- Flat Network Vulnerability: A risky network architecture with zero internal walls. If one client machine is breached, malware can spread laterally to all endpoints unimpeded. [IMPORTANT CONCEPT]
+- Network Address (.0): Represents the identifier of the entire network street. Inputted directly into scanning engines (like Nmap) for host discovery. [MUST REMEMBER FOR CYBERSECURITY]
+- Default Gateway (.1 or .254): The critical exit door router that handles cross-subnet traffic mapping. Highly targeted during Man-in-the-Middle (MITM) attacks. [MUST REMEMBER FOR CYBERSECURITY]
+
+#### 🔄 The DHCP / DORA Handshake:
+- Dynamic Host Configuration Protocol (DHCP): An automated server architecture that loans out IP leases to incoming hardware. [MUST REMEMBER FOR CYBERSECURITY]
+- DORA Packet Sequence: The 4-step communication lifecycle used to retrieve an IP layout automatically:
+  1. Discover (Client network broadcast shout looking for a server)
+  2. Offer (Server unicast proposing an available address)
+  3. Request (Client confirmation locking down the lease slot)
+  4. Acknowledge / ACK (Server validation finaly making the client live)
+- Rogue DHCP Exploit: A critical attack vector where an imposter server replies to a client's Discover broadcast first, forcing target traffic to route directly through a hacker's terminal. [MUST REMEMBER FOR CYBERSECURITY]
+
+
