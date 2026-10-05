@@ -95,3 +95,10 @@
 - Layer 3 Devices (Routers): Specialized hardware nodes that inspect packet IP headers and execute optimal path calculations using protocols like OSPF and RIP. [MUST REMEMBER FOR CYBERSECURITY]
 
 
+### 🏆 Day 5: 100% OSI Model Vertical Stack Mastery
+
+- Hardened conceptual retention from Layer 1 Physical hardware bits up to Layer 7 Application protocols. [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 4 Transport Mechanics: Analyzed the core rules governing Transmission Control Protocol (TCP) and User Datagram Protocol (UDP). [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 5 Virtual Dialogue Handling: Investigated the architecture of Session Cookies and Session Tokens. Mapped out exactly how attackers execute Session Hijacking / Pass-the-Cookie exploits to completely bypass active Two-Factor Authentication (2FA) arrays without a password. [MUST REMEMBER FOR CYBERSECURITY]
+- Layer 6 Presentation Logic: Verified the application of cryptographic frameworks, encryption (SSL/TLS certificates), and file layout translations. [IMPORTANT CONCEPT]
+- Finished 100% of the TryHackMe OSI Model Room dashboard tasks and successfully bypassed the final simulation lab matrix. Cleared a consistent learning streak milestone! 
