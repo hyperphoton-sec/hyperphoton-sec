@@ -101,4 +101,44 @@
 - Layer 4 Transport Mechanics: Analyzed the core rules governing Transmission Control Protocol (TCP) and User Datagram Protocol (UDP). [MUST REMEMBER FOR CYBERSECURITY]
 - Layer 5 Virtual Dialogue Handling: Investigated the architecture of Session Cookies and Session Tokens. Mapped out exactly how attackers execute Session Hijacking / Pass-the-Cookie exploits to completely bypass active Two-Factor Authentication (2FA) arrays without a password. [MUST REMEMBER FOR CYBERSECURITY]
 - Layer 6 Presentation Logic: Verified the application of cryptographic frameworks, encryption (SSL/TLS certificates), and file layout translations. [IMPORTANT CONCEPT]
-- Finished 100% of the TryHackMe OSI Model Room dashboard tasks and successfully bypassed the final simulation lab matrix. Cleared a consistent learning streak milestone! 
+- Finished 100% of the TryHackMe OSI Model Room dashboard tasks and successfully bypassed the final simulation lab matrix. Cleared a consistent learning streak milestone!
+
+
+
+# 🏆 Milestone Reached: 'Network Fundamentals' Module Completed! 🚀
+📅 **Date:** October 6, 2026  
+🏅 **Badge Earned:** `Networking Nerd`  
+⚡ **Current Learning Streak:** 14 Days  
+
+---
+
+## 🛠️ Technical Implementation Summary
+
+### 📦 1. Packets & Frames Mechanics (OSI Layer 2 vs. Layer 3)
+*   **Layer 3 (Network Layer):** Handled logical routing containers called **Packets**, which manage raw data payloads along with crucial source and destination **IP Headers**.
+*   **Layer 2 (Data Link Layer):** Handled physical local transit containers called **Frames**. A frame encapsulates the packet inside a hardware delivery envelope marked with source and destination **MAC Addresses**.
+*   **Packet Header Controls:** Evaluated the mechanics of critical header stickers:
+    *   `Time to Live (TTL)`: Acted as an expiry countdown timer to destroy lost looping packets, preventing global network congestion.
+    *   `Checksum`: Provided automated data integrity checking by comparing mathematical calculations to identify corrupt or modified payloads.
+
+### 🔌 2. Transmission Control Protocol (TCP) Suite
+*   **Connection-Based Security:** Explored how TCP establishes a reliable connection state between a client and server before allowing data bytes to travel down the wire.
+*   **The 3-Way Handshake:** Documented the exact network synchronization steps used to open a session:
+    1.  `SYN` -> Client sends its Initial Sequence Number (ISN) to synchronize.
+    2.  `SYN/ACK` -> Server acknowledges the request and sends its own sequence tracking base.
+    3.  `ACK` -> Client confirms receipt and initiates the data transmission.
+*   **Connection Teardown Flags:** 
+    *   `FIN`: Sent by a device to cleanly and gracefully close a completed data session.
+    *   `RST`: Sent as a violent, immediate reset flag to tear down a session when a system encounters heavy resource faults or application crashes.
+
+### ⚡ 3. User Datagram Protocol (UDP) Architecture
+*   **Stateless Operations:** Analyzed UDP's lightweight, connectionless framework. It completely bypasses handshakes and synchronization states, creating a fast, "fire-and-forget" data pipeline.
+*   **Deployment Metrics:** Mapped out protocol choice logic. Reliable tasks like **File Transfers** require zero dropped bytes and must use **TCP**, whereas high-speed streams like **Live Video Calls** or online gaming tolerate minor loss and rely on **UDP** for low-latency speed.
+
+### 🛡️ 4. Extending Your Network: Ports, Firewalls, & VLANs
+*   **Port Forwarding:** Configured edge routing rules on a **Router** to map incoming public internet gateway traffic directly to hidden private IP resources inside an Intranet LAN environment.
+*   **Firewall Operations:** Reviewed packet inspection engines operating across **OSI Layers 3 & 4** to police network borders using IP addresses, ports, and protocols:
+    *   `Stateless Firewalls`: Handled fast filtering against static rule checklists on an individual packet basis, making them elite weapons against massive traffic floods (DDoS attacks).
+    *   `Stateful Firewalls`: Tracked the dynamic connection state over time, consuming high system resources but allowing the firewall to drop a host entirely if bad behavior is observed.
+*   **VLAN Segregation:** Mastered how Virtual Local Area Networks split a single physical hardware switch into completely isolated logical departments, blocking internal lateral movement and securing core network infrastructure.
+
