@@ -142,3 +142,35 @@
     *   `Stateful Firewalls`: Tracked the dynamic connection state over time, consuming high system resources but allowing the firewall to drop a host entirely if bad behavior is observed.
 *   **VLAN Segregation:** Mastered how Virtual Local Area Networks split a single physical hardware switch into completely isolated logical departments, blocking internal lateral movement and securing core network infrastructure.
 
+
+### 🕸️ Day 6: HTTP Protocol Framework & Live Token Hijacking
+
+#### 🛠️ HTTP Request Methods & Structural Functions
+- **GET Request:** Invoked exclusively to retrieve structural assets and data endpoints from a remote web server. [IMPORTANT CONCEPT]
+- **POST Request:** Deployed to transmit user payloads, submit structured web forms, and actively create new records on the backend. [MUST REMEMBER FOR CYBERSECURITY]
+- **PUT Request:** Utilized to upload or update existing record states and persistent information hosted on a server. [CONCEPT ONLY]
+- **DELETE Request:** Issued to forcefully purge or wipe target files, data records, or resources from the web architecture. [CONCEPT ONLY]
+
+#### 📊 HTTP Status Code Ranges & Core Diagnostics
+- **100-199 (Informational):** Confirms initial request components are processed; legacy baseline. [CONCEPT ONLY]
+- **200-299 (Success):** Verifies the incoming client application request was executed successfully without conflicts (e.g., `200 OK`, `201 Created`). [IMPORTANT CONCEPT]
+- **300-399 (Redirection):** Points the browser agent to an alternate resource pathway, handling either permanent (`301 Moved Permanently`) or temporary (`302 Found`) layout shifts. [IMPORTANT CONCEPT]
+- **400-499 (Client Errors):** Highlights malformed requests from the user, including permission barriers (`401 Not Authorised`, `403 Forbidden`), invalid verbs (`405 Method Not Allowed`), or missing pages (`404 Page Not Found`). [MUST REMEMBER FOR CYBERSECURITY]
+- **500-599 (Server Errors):** Points directly to major backend engine collapses, code crashes (`500 Internal Server Error`), or database downtime (`503 Service Unavailable`). [MUST REMEMBER FOR CYBERSECURITY]
+
+#### 📤 Common Request Headers (Client-to-Server Metadata)
+- **Host:** Explicitly declares the specific target domain name requested, preventing server orientation failure when handling multi-site configurations. [IMPORTANT CONCEPT]
+- **User-Agent:** Discloses the browser software version, engine build, and client operating system type to enable clean frontend rendering. [IMPORTANT CONCEPT]
+- **Content-Length:** Enforces structural data validation by stating the exact byte size of an incoming data payload to prevent transmission drops. [MUST REMEMBER FOR CYBERSECURITY]
+- **Accept-Encoding:** Announces the exact compression algorithms (e.g., Gzip) supported by the browser to optimize network speed. [CONCEPT ONLY]
+
+#### 📥 Common Response Headers (Server-to-Client Metadata)
+- **Content-Type:** Mandates how the local browser engine processes and renders the file payload based on explicit declarations (e.g., `text/html`, `image/png`, `application/pdf`). [MUST REMEMBER FOR CYBERSECURITY]
+- **Cache-Control:** Dictates exactly how many seconds a client machine should store data assets locally before forcing a fresh network download request. [IMPORTANT CONCEPT]
+- **Set-Cookie:** Issued by a remote server to instruct the local web browser to write a specific tracking or state token to local memory. [MUST REMEMBER FOR CYBERSECURITY]
+
+#### 🔬 Session State Management & Practical Token Hijacking
+- **The Stateless Problem:** HTTP retains no persistence memory across individual actions; cookies serve as the layer to maintain user authentication states. [IMPORTANT CONCEPT]
+- **Session Tokens:** Security parameters employ unique, randomized, non-guessable token strings inside cookie arrays instead of using plain-text user passwords. [MUST REMEMBER FOR CYBERSECURITY]
+- **Live Exploitation Lab (Session Hijacking):** Successfully extracted active authentication cookie parameters (`sessionid` & `ds_user_id`) from a live authenticated session context. Manually injected the intercepted token payload into a separate isolated browser profile to completely bypass the login screen and 2-Factor Authentication (2FA) walls. Verified the threat vector of Infostealer malware engines targeting local browser caching architecture.
+- **Milestone Completed:** Solved the manual HTTP interactive request simulation lab to earn the official **"Webbed"** profile badge at 100% completion.
