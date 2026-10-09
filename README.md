@@ -174,3 +174,22 @@
 - **Session Tokens:** Security parameters employ unique, randomized, non-guessable token strings inside cookie arrays instead of using plain-text user passwords. [MUST REMEMBER FOR CYBERSECURITY]
 - **Live Exploitation Lab (Session Hijacking):** Successfully extracted active authentication cookie parameters (`sessionid` & `ds_user_id`) from a live authenticated session context. Manually injected the intercepted token payload into a separate isolated browser profile to completely bypass the login screen and 2-Factor Authentication (2FA) walls. Verified the threat vector of Infostealer malware engines targeting local browser caching architecture.
 - **Milestone Completed:** Solved the manual HTTP interactive request simulation lab to earn the official **"Webbed"** profile badge at 100% completion.
+
+
+### 🕸️ Day 7: Web Frontend Exploitation & Client-Side Injection Mechanics
+
+#### 🏗️ Core Frontend Architecture & Public Visibility Rule
+- **HTML (Skeleton Framework):** Establishes the static structural data elements and raw presentation tags of a web application page.
+- **CSS (Layout Template Engine):** Governs the global presentation, style design rules, visibility parameters, and operational visual properties.
+- **JavaScript (Dynamic Logic Execution):** Operates as the functional engine managing runtime updates, interactive user events, and real-time DOM alterations.
+- **The Visibility Constraint:** All client-side parameters, configurations, structural setups, and interactive code modules are fully readable by users via static page source tools (`Ctrl + U`).
+
+#### 🕵️‍♂️ Information Gathering & Sensitive Data Exposure (CWE-200)
+- **Comment Node Leakage:** Investigated security failures where developers accidentally leave authentication variables or server maps exposed inside HTML comments (`<!-- comment -->`).
+- **Hidden Redirection Paths:** Evaluated architectural layout manipulation using specific CSS attributes (`style="display:none;"`) to conceal administrative routing directories from frontend menus while leaving the underlying paths fully exposed to manual source code audits.
+
+#### 🧪 Client-Side HTML Injection (Input Validation Failure)
+- **The Input Standard Constraint:** Evaluated the high-risk operational core rule of web application security: *"Never Trust User Input."*
+- **Sanitization Failure Mechanics:** Explored instances where application input controllers fail to filter, validate, or sanitize input text strings before rendering them to the active viewport environment.
+- **Payload Construction & Injection:** Developed and successfully deployed an arbitrary HTML anchor string injection (`<a href="http://target.com">Text</a>`) into an active web form field to forcefully restructure the page visual interface and generate authenticated platform flags.
+- **Room Completed:** Fully closed out all conceptual testing elements to achieve 100% green score validation across the "How Websites Work" framework matrix.
