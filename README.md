@@ -214,3 +214,20 @@
 - **Hybrid HTTPS Implementation:** Employs Asymmetric primitives and Certificate Authority (CA) validation metrics to securely establish a shared symmetric session seed, switching to symmetric arrays for low-latency bulk data encapsulation.
 - **Automation Bypass:** Successfully automated Caesar Cipher ciphertext analysis (`XLMW MW XLI JMREP GSHI`) using custom shift logic (-4 position mapping to `THIS IS THE FINAL CODE`), clearing all active sandbox flags.
 
+
+### 🛡️ Defensive Security Operations: Infrastructure Mapping & Blue Team Blueprints
+
+#### 🏙️ Client Infrastructure Visibility (The City Analogy)
+- **Asset Monitoring:** Established high-level infrastructure visibility parameters by mapping physical enterprise devices to conceptual city grids (Workstations to Homes, Web Servers to Shops, Mail Servers to Post Offices).
+- **Perimeter Gateways:** Configured firewall boundary filters mapped as localized "City Gates" to structurally control external network transit loops and reject untrusted traffic vectors.
+
+#### 🛠️ Blue Team Incident Response Operations
+- **Prevention Controls:** Integrated deep boundary firewalls, local anti-malware programs, and endpoint software patching to stop structural vulnerability discovery.
+- **Detection & Mitigation:** Tracked automated traffic logs and security alerts to isolate suspicious anomalies (repeated login errors or anomalous IP ranges), deploying containment blocks to minimize dynamic risk.
+- **Risk Prioritization:** Applied structural auditing protocols to identify high-value system assets (core data stores and server clusters) to guide security engineering priorities.
+
+#### 🎓 Path Graduation Milestone
+- **Path Status:** 100% complete across all evaluation models.
+- **Milestone Captured:** Official Pre Security Certification unlocked. Verified foundational core proficiency across Linux CLI, Windows Architecture, Advanced Network Protocols, Web Infrastructure Security, and Cryptographic Handshakes.
+
+
