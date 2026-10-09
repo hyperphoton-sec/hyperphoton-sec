@@ -188,6 +188,20 @@
 - **Comment Node Leakage:** Investigated security failures where developers accidentally leave authentication variables or server maps exposed inside HTML comments (`<!-- comment -->`).
 - **Hidden Redirection Paths:** Evaluated architectural layout manipulation using specific CSS attributes (`style="display:none;"`) to conceal administrative routing directories from frontend menus while leaving the underlying paths fully exposed to manual source code audits.
 
+
+### 🛡️ Day 7: Operational Security Foundations & The CIA Triad
+
+#### 📐 The Core Security Framework Matrix (The CIA Triad)
+- **Confidentiality (Data Restriction Constraints):** Governs strict access verification controls ensuring sensitive elements are only exposed to authorized entities. Checked failures include clear-text parameter leakage over unsecured public coffee shop networks.
+- **Integrity (Data Veracity Protocols):** Assures digital strings remain completely unaltered during dynamic network transit loops. Failure vectors analyze mid-routing alteration of transaction destination fields or grade manipulation.
+- **Availability (System Persistence Standards):** Guarantees high-availability metrics for operational infrastructure whenever authorized clients initiate connection requests. Primary mitigation loops target DDoS traffic spikes using load thresholds.
+
+#### 🧪 Hands-On Threat Modeling Exercises
+- **Incident Analysis Sorting:** Configured a 9-incident scenario data grid to accurately isolate infrastructure failures into independent triad vectors with a first-run precision score of 88.8%.
+- **DDoS Adversarial Intel:** Evaluated operational target motivations behind Availability disruption vectors, highlighting Ransom DDoS (RDDoS) extortion tactics, competitor-hired revenue manipulation, and operational distraction/smoke-screen deployments hiding backend data theft.
+- **Room Status:** Successfully finalized all core evaluation matrix variables to achieve a 100% complete green verification status flag.
+
+
 #### 🧪 Client-Side HTML Injection (Input Validation Failure)
 - **The Input Standard Constraint:** Evaluated the high-risk operational core rule of web application security: *"Never Trust User Input."*
 - **Sanitization Failure Mechanics:** Explored instances where application input controllers fail to filter, validate, or sanitize input text strings before rendering them to the active viewport environment.
