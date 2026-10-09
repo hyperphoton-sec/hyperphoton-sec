@@ -1,4 +1,5 @@
 👋 Hi, I'm Arnav | Future Cyber Defense Architect & Enterprise Defender
+
 🚀 Managing a high-velocity sprint to master Infrastructure Security, Log Analytics, and Cloud Defense Systems. 
 🛡️ Training to safeguard critical enterprise architectures while tracking towards global remote security operations.
 
