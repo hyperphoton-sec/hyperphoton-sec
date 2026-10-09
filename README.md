@@ -207,3 +207,10 @@
 - **Sanitization Failure Mechanics:** Explored instances where application input controllers fail to filter, validate, or sanitize input text strings before rendering them to the active viewport environment.
 - **Payload Construction & Injection:** Developed and successfully deployed an arbitrary HTML anchor string injection (`<a href="http://target.com">Text</a>`) into an active web form field to forcefully restructure the page visual interface and generate authenticated platform flags.
 - **Room Completed:** Fully closed out all conceptual testing elements to achieve 100% green score validation across the "How Websites Work" framework matrix.
+
+#### 🔑 Cryptographic Engineering & Key Management Protocols
+- **Symmetric Architecture:** Leverages a single shared key for both encryption and decryption execution loops. Highly efficient for bulk data processing but bounded by the Key Distribution Problem. Tested ciphers: Caesar Cipher (ROT13 Shift Framework).
+- **Asymmetric Framework:** Utilizes mathematically linked Public/Private key pairs to eliminate the need for pre-shared network secrets. Recovering private keys from public keys is computationally secure against standard architectures.
+- **Hybrid HTTPS Implementation:** Employs Asymmetric primitives and Certificate Authority (CA) validation metrics to securely establish a shared symmetric session seed, switching to symmetric arrays for low-latency bulk data encapsulation.
+- **Automation Bypass:** Successfully automated Caesar Cipher ciphertext analysis (`XLMW MW XLI JMREP GSHI`) using custom shift logic (-4 position mapping to `THIS IS THE FINAL CODE`), clearing all active sandbox flags.
+
