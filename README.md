@@ -1,6 +1,7 @@
-# 👋 Hi, I'm Arnav | Future Penetration Tester
+👋 Hi, I'm Arnav | Future Cyber Defense Architect & Enterprise Defender
+🚀 Managing a high-velocity sprint to master Infrastructure Security, Log Analytics, and Cloud Defense Systems. 
+🛡️ Training to safeguard critical enterprise architectures while tracking towards global remote security operations.
 
-🚀 Managing a high-velocity sprint to master the core pillars of Systems Engineering and Offensive Security.
 
 ### 🛡️ Core Targets & Focus Fields:
 - **Foundational Infrastructure:** Mastering the TryHackMe Pre-Security Learning Path.
