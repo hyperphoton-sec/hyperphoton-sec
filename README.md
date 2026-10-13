@@ -233,3 +233,37 @@
 - **Milestone Captured:** Official Pre Security Certification unlocked. Verified foundational core proficiency across Linux CLI, Windows Architecture, Advanced Network Protocols, Web Infrastructure Security, and Cryptographic Handshakes.
 
 
+
+# TryHackMe: Cyber Security 101 — Search Skills Room
+**Path:** Cyber Security 101 (Foundational Path)
+**Focus Area:** Threat Intelligence, OSINT, Engine Filtering, and Technical Verification
+**Status:** 100% Completed
+
+## [1] OSINT & Infrastructure Enumeration (Shodan)
+- **Core Architecture:** Shodan maps globally exposed IP addresses, critical industrial control systems (ICS), network routing hardware, and Internet of Things (IoT) endpoints.
+- **Data Extraction:** Extracts banner responses from open diagnostic ports to determine running software instances and structural configurations.
+- **Query Filter Logic:**
+  - `country:CODE` -> Isolates network scanning to precise geographic boundaries (e.g., `country:IE`).
+  - `port:NUMBER` -> Restricts search arrays to systems exposing specific access services (e.g., `port:22` for SSH).
+  - `org:ASN/NAME` -> Limits exposure scanning to autonomous network segments or enterprise subnets (e.g., `org:AS7224` for AWS).
+  - `hostname:DOMAIN` -> Matches target configurations directly against target domain infrastructures.
+
+## [2] Reputation Analytics & Malware Triage (VirusTotal)
+- **Consensus Aggregator:** Collects telemetry logs and analytical engines from over 70 external antivirus suites and web domain scanners.
+- **Ingestion Vectors:** Processes operational queries via absolute file uploads, malicious URLs, target fully qualified domains, or cryptographic file hashes (MD5, SHA-1, SHA-256).
+- **Analytical Constraints:** Not entirely foolproof against Fully Undetectable (FUD) or complex polymorphic malware architectures. Used by SOC analysts to establish quick baseline reputation alerts during initial triage phases.
+
+## [3] Vulnerability Tracking & Standardization (CVE / CVSS Framework)
+- **Universal Catalog:** The Common Vulnerabilities and Exposures (CVE) database acts as the primary global record for disclosed software and hardware infrastructure security flaws.
+- **Naming Constraints:** Standardized registry formatting follows the `CVE-YEAR-NUMBER` blueprint (e.g., `CVE-2025-55182`), with major systemic exploits receiving monikers (e.g., Log4Shell, Heartbleed).
+- **Risk Assessment:** The Common Vulnerability Scoring System (CVSS) calculates risk metrics based on technical Impact, Exploit Complexity, and Exploit Availability to prioritize mitigation queues.
+- **Exploit Verification:** Integrates with public code databases like ExploitDB to match technical CVE indexes with functional Proof of Concept (PoC) scripts.
+
+## [4] Native System Documentation (Linux MAN Engine)
+- **Local Telemetry Ground-Truth:** Native tool manual systems are more definitive than arbitrary third-party walkthroughs for understanding syntax execution constraints.
+- **Local Shell Ingestion:** The `man <command>` syntax displays local, text-based operational guides for active utility packages directly inside the terminal interface.
+- **Dissection Mechanics:** Reading the SYNOPSIS array outlines mandatory positions, positional parameters, and active arguments required to manage critical network binaries such as Netcat (`nc`).
+
+## [5] Open-Source Intelligence Validation (GitHub Repositories)
+- **Velocity Advantages:** Independent threat researchers deploy tactical exploit codes and vulnerability scanning mechanics on GitHub faster than vendor patching intervals.
+- **Verification Mandate:** Publicly hosted PoC configurations present structural risks. Scripts can contain syntax defects, deliberate execution bugs, or malicious obfuscated strings designed to compromise the analyst's workstation. Verification before local deployment is mandatory.
