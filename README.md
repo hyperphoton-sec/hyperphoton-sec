@@ -267,3 +267,148 @@
 ## [5] Open-Source Intelligence Validation (GitHub Repositories)
 - **Velocity Advantages:** Independent threat researchers deploy tactical exploit codes and vulnerability scanning mechanics on GitHub faster than vendor patching intervals.
 - **Verification Mandate:** Publicly hosted PoC configurations present structural risks. Scripts can contain syntax defects, deliberate execution bugs, or malicious obfuscated strings designed to compromise the analyst's workstation. Verification before local deployment is mandatory.
+
+
+# Linux Fundamentals Part 1
+
+## Commands I learned
+
+### 1. `ls`
+
+`ls` is used to list the files and folders in a directory.
+
+```bash
+ls
+ls -l
+ls -a
+```
+
+- `ls` shows the files and folders in the current directory.
+- `ls -l` shows more details like permissions, owner, size and date.
+- `ls -a` also shows hidden files, whose names usually start with a dot (`.`).
+
+### 2. `cat`
+
+`cat` is used to display the contents of a file.
+
+```bash
+cat filename
+```
+
+It can also display the contents of multiple files.
+
+```bash
+cat file1 file2
+```
+
+I can use it to read text files and check what is written inside them.
+
+### 3. `file`
+
+The `file` command helps identify what type of file something is.
+
+```bash
+file filename
+```
+
+A file's extension does not always tell us what it actually contains, so this command can be useful when checking an unfamiliar file.
+
+### 4. `find`
+
+`find` is used to search for files and directories.
+
+```bash
+find /path -name "filename"
+```
+
+Some other useful examples:
+
+```bash
+find /path -type f
+find /path -type d
+```
+
+- `-name` searches by name.
+- `-type f` searches for regular files.
+- `-type d` searches for directories.
+
+The search starts from the path I specify. Permissions can affect which results I can access.
+
+## Linux operators
+
+### `&` — Run in the background
+
+Adding `&` at the end of a command lets it run in the background, so I can use the terminal for other commands without waiting for it to finish.
+
+```bash
+command &
+```
+
+### `&&` — Run the next command after success
+
+`&&` runs the second command only if the first command succeeds.
+
+```bash
+command1 && command2
+```
+
+### `>` — Write output to a file
+
+This redirects command output into a file. If the file already contains something, its old contents are overwritten.
+
+```bash
+echo "TryHackMe" > thm
+```
+
+To check the contents:
+
+```bash
+cat thm
+```
+
+Output:
+
+```text
+TryHackMe
+```
+
+### `>>` — Add output to a file
+
+This works like `>`, but it adds the new output at the end instead of replacing the existing contents.
+
+```bash
+echo "thm" >> thm
+```
+
+Now `cat thm` displays:
+
+```text
+TryHackMe
+thm
+```
+
+Both `>` and `>>` can create a file if it does not exist, provided I have permission to write there.
+
+## Quick revision
+
+| Command / operator | What it does |
+|---|---|
+| `ls` | Lists files and directories |
+| `cat` | Displays file contents |
+| `file` | Identifies the likely file type |
+| `find` | Searches for files and directories |
+| `&` | Runs a command in the background |
+| `&&` | Runs the next command if the first succeeds |
+| `>` | Writes output and overwrites existing contents |
+| `>>` | Appends output to existing contents |
+
+## What I learned
+
+I learned how to list files, read their contents, identify file types and search for files. I also learned the difference between `>` and `>>`. The main thing to remember is that `>` can overwrite existing data, while `>>` preserves the old content and adds new output.
+
+## Progress
+
+- Platform: TryHackMe
+- Room: Linux Fundamentals Part 1
+- Status: Completed
+- Next: Linux Fundamentals Part 2
