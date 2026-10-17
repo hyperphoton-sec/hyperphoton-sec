@@ -404,6 +404,289 @@ Both `>` and `>>` can create a file if it does not exist, provided I have permis
 
 ## What I learned
 
+# Linux Fundamentals Part 2 — Learning Notes
+
+**Learning platform:** [TryHackMe](https://tryhackme.com/)  
+**Status:** Completed  
+**Focus:** SSH, File Operations, Filesystem Navigation, Permissions, Users & Groups
+
+These are my personal notes from completing the Linux Fundamentals Part 2 room on TryHackMe. I have documented the commands, concepts, practical examples, and mistakes that helped me understand Linux better.
+
+## 1. SSH (Secure Shell)
+
+SSH is used to connect to and manage a remote machine over an encrypted connection.
+
+### Connecting to a remote machine
+
+```bash
+ssh tryhackme@MACHINE_IP
+```
+
+- `ssh` starts an SSH connection.
+- `tryhackme` is the username.
+- `MACHINE_IP` must be replaced with the actual IP address of the target machine.
+
+On the first connection, SSH may display the server's host-key fingerprint and ask for confirmation. The fingerprint should be verified when possible before trusting the host.
+
+### Useful commands after connecting
+
+```bash
+whoami
+hostname
+pwd
+```
+
+- `whoami` displays the current username.
+- `hostname` displays the machine's hostname.
+- `pwd` displays the current working directory.
+
+**What I learned:** The AttackBox and the target machine are separate environments. Before running commands, I should verify which machine I am connected to.
+
+## 2. File and Directory Operations
+
+| Command | Purpose |
+|---|---|
+| `ls` | Lists directory contents |
+| `ls -a` | Includes hidden entries |
+| `ls -l` | Shows detailed file information |
+| `cd Documents` | Enters the Documents directory |
+| `cd ..` | Moves to the parent directory |
+| `cd ~` | Goes to the current user's home directory |
+| `pwd` | Shows the current location |
+| `touch file.txt` | Creates an empty file if it does not exist |
+| `mkdir folder` | Creates a directory |
+| `cp source destination` | Copies a file |
+| `mv source destination` | Moves or renames a file |
+| `rm file.txt` | Removes a file |
+| `rm -R folder` | Removes a directory and its contents recursively |
+| `cat file.txt` | Displays a file's contents |
+
+### Copying a file
+
+To copy a file named `note` from the home directory into `Documents`:
+
+```bash
+cd ~
+cp note Documents/
+ls Documents
+```
+
+The last command can be used to verify that the file exists in the destination directory.
+
+The `cp` command needs both a source and a destination. Running `cp note` alone produces an error because the destination is missing.
+
+### Case sensitivity
+
+Linux distinguishes uppercase and lowercase letters in path names.
+
+```bash
+cd Documents
+```
+
+is not necessarily equivalent to:
+
+```bash
+cd documents
+```
+
+**What I learned:** When a path does not work, check its spelling and capitalization before assuming the directory does not exist.
+
+## 3. Navigating the Filesystem
+
+The following symbols are useful when working with paths:
+
+- `.` refers to the current directory.
+- `..` refers to the parent directory.
+- `~` refers to the current user's home directory.
+- `/` is the root of the filesystem.
+
+Examples:
+
+```bash
+ls ./
+cd ..
+cd ~
+cd /
+```
+
+The `tree` command displays files and directories in a hierarchical structure.
+
+```bash
+tree
+```
+
+To limit the displayed depth:
+
+```bash
+tree -L 2 /
+```
+
+The `tree` utility may not be installed on every Linux system.
+
+## 4. Important Linux Directories
+
+Linux organises its filesystem beneath `/`, the filesystem root.
+
+### `/etc` — Configuration
+
+Contains system and application configuration files.
+
+Examples:
+
+- `/etc/passwd` — Stores user-account information.
+- `/etc/sudoers` — Defines sudo privileges and related rules.
+
+### `/var` — Variable Data
+
+Contains data that changes during normal system operation, including logs and application data.
+
+An important location is:
+
+```bash
+/var/log
+```
+
+Many Linux services and applications store their logs here.
+
+### `/root` — Root User's Home
+
+The home directory of the `root` administrator account. It is different from `/`, which is the top-level directory of the entire filesystem.
+
+### `/tmp` — Temporary Files
+
+Used for temporary data. Files may be removed during reboot or by scheduled cleanup, depending on the system configuration.
+
+### `/home` — User Home Directories
+
+Contains home directories for regular users, such as `/home/tryhackme`.
+
+**What I learned:** Knowing the purpose of these directories makes it easier to navigate Linux systems and locate relevant configuration files, user data, and logs.
+
+## 5. Linux File Permissions
+
+The `ls -l` command displays detailed information about files and directories, including their permissions and ownership.
+
+Example:
+
+```text
+-rw-r--r-- 1 tryhackme tryhackme 0 Feb 19 10:37 file1
+```
+
+The permission string is:
+
+```text
+-rw-r--r--
+```
+
+It can be broken down into four parts:
+
+| Part | Meaning |
+|---|---|
+| `-` | Regular file |
+| `rw-` | Owner can read and write |
+| `r--` | Group can read |
+| `r--` | Other users can read |
+
+The permission symbols are:
+
+- `r` — Read
+- `w` — Write
+- `x` — Execute
+- `-` — Permission not granted
+
+For regular files, read allows viewing contents, write allows modifying contents, and execute allows running the file as a program or script when applicable.
+
+For directories, permissions work differently:
+
+- Read allows listing directory entries.
+- Write allows creating or removing entries, subject to other restrictions.
+- Execute allows traversing the directory and accessing entries when other permissions allow it.
+
+## 6. Users and Groups
+
+Each file has an owner and an associated group. Linux can assign different permissions to:
+
+1. The owner
+2. Members of the file's group
+3. Other users
+
+This allows administrators to control who can read, modify, or execute files without giving every user administrative access.
+
+In the example below:
+
+```text
+-rw-r--r-- 1 tryhackme tryhackme 0 Feb 19 10:37 file1
+```
+
+The first `tryhackme` identifies the owner, and the second identifies the associated group.
+
+## 7. Switching Users with `su`
+
+The `su` command allows a user to switch to another account, subject to authentication and permission requirements.
+
+To switch to `user2` with a login-style shell:
+
+```bash
+su -l user2
+```
+
+The `-l` option requests a login-style environment for the target user.
+
+After entering the password provided by the training room, verify the active account:
+
+```bash
+whoami
+```
+
+The expected username is:
+
+```text
+user2
+```
+
+The contents of a file can then be displayed with:
+
+```bash
+cat important
+```
+
+This exercise demonstrated that access to a file can depend on the current user's permissions.
+
+## 8. Troubleshooting and Lessons Learned
+
+During the practical exercises, I encountered errors that helped me understand Linux commands more clearly.
+
+- **Incorrect option:** `su -1` uses the number `1`, whereas `su -l` uses the lowercase letter `l`.
+- **Missing destination:** `cp` requires both a source and a destination.
+- **Case sensitivity:** `Documents` and `documents` may refer to different paths.
+- **Wrong environment:** The AttackBox and the target machine are separate systems.
+- **Password input:** Password prompts generally do not display typed characters.
+- **Command versus argument:** A username such as `user2` must be passed to `su`; entering it alone makes the shell attempt to execute it as a command.
+
+These mistakes helped me practise troubleshooting instead of repeatedly running commands without understanding the errors.
+
+## 9. Relevance to Blue Team Security
+
+These Linux fundamentals are useful when investigating systems and security incidents.
+
+- **SSH:** Understanding remote access and administration.
+- **Filesystem navigation:** Locating files and system directories.
+- **Logs:** Finding relevant records during an investigation.
+- **Permissions:** Understanding access restrictions and potential permission-related risks.
+- **Users and groups:** Investigating ownership and access privileges.
+- **Command-line troubleshooting:** Working more confidently in Linux environments.
+
+## Progress
+
+- Completed TryHackMe Linux Fundamentals Part 2.
+- Practised SSH access, file copying, directory navigation, and switching users.
+- Studied filesystem structure, file permissions, and user/group concepts.
+- Identified and corrected command-line mistakes during practical exercises.
+
+**Next focus:** Continue strengthening Linux and networking fundamentals before moving deeper into Blue Team and SOC-related skills.
+
+*These notes are written for personal revision and reflect my learning from the room. I will update them as I revisit concepts and apply them in future labs.*
+
 I learned how to list files, read their contents, identify file types and search for files. I also learned the difference between `>` and `>>`. The main thing to remember is that `>` can overwrite existing data, while `>>` preserves the old content and adds new output.
 
 ## Progress
