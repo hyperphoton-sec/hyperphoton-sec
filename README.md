@@ -695,3 +695,321 @@ I learned how to list files, read their contents, identify file types and search
 - Room: Linux Fundamentals Part 1
 - Status: Completed
 - Next: Linux Fundamentals Part 2
+
+
+
+# Linux Fundamentals Part 3 — Learning Notes
+
+**Learning platform:** [TryHackMe](https://tryhackme.com/)  
+**Topic:** Linux Fundamentals Part 3  
+**Purpose:** Personal notes, command practice, and revision.
+
+> These notes summarize concepts studied while working through the TryHackMe Linux Fundamentals Part 3 room. Examples are for learning and authorized lab environments.
+
+## 1. Nano — Command-Line Text Editor
+
+Nano is a terminal-based text editor used to create and edit files.
+
+### Open or create a file
+
+```bash
+nano filename
+```
+
+If the file already exists, Nano opens it. If it does not exist, Nano lets you create it.
+
+### Useful Nano keyboard shortcuts
+
+| Shortcut | Function |
+|---|---|
+| `Ctrl + O` | Save/write the file |
+| `Ctrl + X` | Exit Nano |
+| `Ctrl + W` | Search within the file |
+| `Ctrl + K` | Cut the current line |
+| `Ctrl + G` | Open Nano's help |
+
+### Practical example
+
+```bash
+nano myfile
+```
+
+Type some text, save it with `Ctrl + O`, confirm the filename if prompted, and exit with `Ctrl + X`.
+
+Verify the saved contents:
+
+```bash
+cat myfile
+```
+
+**Key takeaway:** Nano edits the file; `cat` can display its contents in the terminal.
+
+## 2. File Transfers in Linux
+
+Files can be transferred between systems using different tools. The appropriate method depends on the environment and access available.
+
+### A. `wget` — Download a file
+
+`wget` downloads files from a URL over supported protocols such as HTTP and HTTPS.
+
+```bash
+wget https://example.com/file.txt
+```
+
+The file is normally saved in the current working directory.
+
+To read a downloaded text file:
+
+```bash
+cat file.txt
+```
+
+### B. `scp` — Securely copy files over SSH
+
+`scp` copies files between local and remote systems using SSH.
+
+**Copy a local file to a remote machine:**
+
+```bash
+scp file.txt username@REMOTE_IP:/destination/path/
+```
+
+**Copy a remote file to the local machine:**
+
+```bash
+scp username@REMOTE_IP:/path/file.txt ./file.txt
+```
+
+Replace the example username, IP address, and paths with the actual values for the authorized system.
+
+### C. Python HTTP server
+
+Python can serve files from the current directory over HTTP.
+
+Start a server on port 8000:
+
+```bash
+python3 -m http.server 8000
+```
+
+Keep the server terminal running while clients connect. From another terminal or authorized lab machine, a client can download an accessible file using its server IP and port.
+
+Example:
+
+```bash
+wget http://SERVER_IP:8000/file.txt
+```
+
+Replace `SERVER_IP` with the actual server IP.
+
+**Important:** The server exposes files from its serving directory to clients that can reach it. Use a trusted, authorized lab network and avoid exposing sensitive files.
+
+### Practical learning
+
+In the TryHackMe lab, I used a Python HTTP server on the deployed machine and downloaded a hidden file named `.flag.txt` to the AttackBox with `wget`. The download returned `200 OK`, confirming a successful HTTP response.
+
+The file was then ready to be inspected locally:
+
+```bash
+cat .flag.txt
+```
+
+**Key takeaway:**
+- `wget` downloads from a URL.
+- `scp` securely copies files over SSH.
+- `python3 -m http.server 8000` serves files over HTTP from the current directory.
+
+## 3. Processes and PIDs
+
+A **process** is a running instance of a program. The operating system's kernel manages processes.
+
+Each process has a **PID (Process ID)** that identifies it.
+
+### View processes
+
+Show processes associated with the current terminal session:
+
+```bash
+ps
+```
+
+Show a detailed list of processes visible on the system:
+
+```bash
+ps aux
+```
+
+Display a live, continuously refreshed process view:
+
+```bash
+top
+```
+
+Press `q` to quit `top`.
+
+### Understanding `ps aux`
+
+The output can contain many rows because numerous processes may be running simultaneously.
+
+Common columns include:
+
+- `USER` — user associated with the process
+- `PID` — process ID
+- `%CPU` — CPU usage
+- `%MEM` — memory usage
+- `COMMAND` — command or program associated with the process
+
+`ps aux` displays a snapshot; `top` is useful for ongoing monitoring.
+
+### Stop or signal a process
+
+The `kill` command sends a signal to a process identified by its PID.
+
+```bash
+kill PID
+```
+
+Replace `PID` with the actual process ID.
+
+Common signals:
+
+| Signal | Purpose |
+|---|---|
+| `SIGTERM` | Requests termination and allows cleanup where possible |
+| `SIGKILL` | Forces termination without normal cleanup |
+| `SIGSTOP` | Suspends a process |
+
+The default signal for `kill PID` is normally `SIGTERM`.
+
+**Safety note:** Identify a process before signalling it. Avoid terminating system-critical processes or processes you do not control.
+
+## 4. `systemd` and `systemctl`
+
+On many Linux distributions, `systemd` initializes and manages system services.
+
+`systemctl` is used to interact with services managed by `systemd`.
+
+### Common commands
+
+Check service status:
+
+```bash
+systemctl status apache2
+```
+
+Start a service now:
+
+```bash
+systemctl start apache2
+```
+
+Stop a service:
+
+```bash
+systemctl stop apache2
+```
+
+Configure a service to start automatically at boot:
+
+```bash
+systemctl enable apache2
+```
+
+Disable automatic startup at boot:
+
+```bash
+systemctl disable apache2
+```
+
+These examples use Apache's service name on systems where it is called `apache2`. Service names and permissions can vary by Linux distribution.
+
+### Important distinction
+
+- `start` — starts the service now.
+- `enable` — configures automatic startup at boot.
+- `status` — checks the service's current state.
+- `stop` — stops the service.
+- `disable` — disables automatic startup at boot.
+
+Enabling a service does not generally mean that it starts immediately.
+
+## 5. Foreground and Background Processes
+
+A foreground process runs attached to the terminal, so its interaction or output occupies that terminal session.
+
+A background process runs without requiring the terminal to wait for it in the same way.
+
+### Run a command in the background
+
+Add `&` at the end of a command:
+
+```bash
+sleep 300 &
+```
+
+The shell starts the job in the background and normally returns control to the prompt.
+
+### Suspend a foreground job
+
+Press:
+
+```text
+Ctrl + Z
+```
+
+This suspends the foreground job. It does not necessarily terminate the process.
+
+### Bring a job back to the foreground
+
+```bash
+fg
+```
+
+This brings the current background or suspended job into the foreground. If multiple jobs exist, job selection may be necessary.
+
+### Stop a foreground command
+
+```text
+Ctrl + C
+```
+
+This normally sends an interrupt to the foreground process. The exact result depends on the program.
+
+### Quick comparison
+
+| Action | Typical use |
+|---|---|
+| `&` | Start a command as a background job |
+| `Ctrl + Z` | Suspend the current foreground job |
+| `fg` | Bring a job to the foreground |
+| `Ctrl + C` | Interrupt a foreground command |
+
+## 6. Commands to Revise
+
+| Command | Purpose |
+|---|---|
+| `nano filename` | Open or create a file in Nano |
+| `cat filename` | Display file contents |
+| `wget URL` | Download a file from a URL |
+| `scp SOURCE DESTINATION` | Copy files securely over SSH |
+| `python3 -m http.server 8000` | Start a simple HTTP file server on port 8000 |
+| `ps` | View processes associated with the current session |
+| `ps aux` | View a detailed process listing |
+| `top` | Monitor processes and resource usage live |
+| `kill PID` | Send the default signal to a process |
+| `systemctl status SERVICE` | Check service status |
+| `systemctl start SERVICE` | Start a service |
+| `systemctl enable SERVICE` | Configure automatic startup at boot |
+| `sleep 300 &` | Run a sleep command as a background job |
+| `fg` | Bring a job into the foreground |
+
+## 7. Revision Notes
+
+- Do not expect to memorize every command after reading it once. Repeating commands in a terminal improves recall.
+- Understand what a command does before running it on a real system.
+- Use TryHackMe's authorized lab machines for practical exercises.
+- Record the tasks actually completed and the concepts genuinely understood; do not claim uncompleted tasks.
+
+**Progress note:** These notes cover the topics studied so far in Linux Fundamentals Part 3. Add further topics and practical results as the room progresses.
+
+**Credit:** Learning material and lab exercises from TryHackMe — Linux Fundamentals Part 3. These are personal notes written for revision.
