@@ -1013,3 +1013,169 @@ This normally sends an interrupt to the foreground process. The exact result dep
 **Progress note:** These notes cover the topics studied so far in Linux Fundamentals Part 3. Add further topics and practical results as the room progresses.
 
 **Credit:** Learning material and lab exercises from TryHackMe — Linux Fundamentals Part 3. These are personal notes written for revision.
+
+## Task 5: Processes 101
+
+**Learning platform:** TryHackMe
+**Room:** Linux Fundamentals Part 3
+
+### 1. Processes and PIDs
+
+A process is a running instance of a program. The Linux kernel manages processes, and each process has a Process ID (PID).
+
+- **PID:** Identifies a process.
+- **Parent and child processes:** Processes can start other processes.
+- PIDs are allocated by the operating system; they do not always increase consecutively because IDs can be reused or allocated differently.
+
+### 2. Viewing Processes
+
+#### `ps`
+
+```bash
+ps
+```
+
+Displays a snapshot of processes associated with the current terminal session.
+
+#### `ps aux`
+
+```bash
+ps aux
+```
+
+Displays a detailed list of processes visible to the command, including processes associated with other users.
+
+Useful columns include:
+
+| Column    | Meaning                             |
+| --------- | ----------------------------------- |
+| `USER`    | User associated with the process    |
+| `PID`     | Process ID                          |
+| `%CPU`    | CPU usage                           |
+| `%MEM`    | Memory usage                        |
+| `COMMAND` | Command associated with the process |
+
+#### `top`
+
+```bash
+top
+```
+
+Shows a continuously refreshed view of processes and resource usage. Press `q` to exit.
+
+**Remember:** `ps` provides a snapshot, while `top` is useful for live monitoring.
+
+### 3. Process Signals
+
+The `kill` command sends a signal to a process identified by its PID.
+
+```bash
+kill PID
+```
+
+Replace `PID` with the actual process ID.
+
+| Signal    | Purpose                                                        |
+| --------- | -------------------------------------------------------------- |
+| `SIGTERM` | Requests termination and allows the process to perform cleanup |
+| `SIGKILL` | Forces termination without normal cleanup                      |
+| `SIGSTOP` | Suspends a process                                             |
+
+The default signal sent by `kill PID` is `SIGTERM`.
+
+Memory aid:
+
+- `TERM` → request termination
+- `KILL` → force termination
+- `STOP` → suspend
+
+### 4. `systemd` and Services
+
+`systemd` is an init system and service manager used by many Linux distributions. On systems using systemd, it commonly runs as PID 1.
+
+`systemctl` is used to manage systemd services.
+
+```bash
+systemctl status apache2
+systemctl start apache2
+systemctl stop apache2
+systemctl enable apache2
+systemctl disable apache2
+```
+
+| Option    | Purpose                             |
+| --------- | ----------------------------------- |
+| `status`  | Check service state                 |
+| `start`   | Start a service now                 |
+| `stop`    | Stop a service now                  |
+| `enable`  | Configure automatic startup at boot |
+| `disable` | Disable automatic startup at boot   |
+
+`start` and `enable` have different purposes: one starts a service immediately, while the other configures its startup behaviour.
+
+The example uses the service name `apache2`; names and permissions can vary by system.
+
+### 5. Foreground and Background Jobs
+
+A foreground job runs attached to the current terminal. A background job allows the shell to return control so other commands can be entered.
+
+#### Start a command in the background
+
+```bash
+sleep 300 &
+```
+
+The `&` operator starts the command as a background job.
+
+#### Suspend a foreground job
+
+Press:
+
+```text
+Ctrl + Z
+```
+
+This suspends the current foreground job rather than terminating it.
+
+#### Bring a job to the foreground
+
+```bash
+fg
+```
+
+Brings the current or selected job back to the foreground.
+
+#### Interrupt a foreground command
+
+Press:
+
+```text
+Ctrl + C
+```
+
+This normally sends an interrupt signal to the foreground command.
+
+**Important distinction:**
+
+- `Ctrl + C` → interrupt
+- `Ctrl + Z` → suspend
+- `fg` → foreground a job
+- `&` → start a command in the background
+
+### 6. Namespaces and Process Isolation
+
+Linux namespaces help isolate certain system resources and views between groups of processes. They are useful in security and containerization.
+
+The exact isolation depends on the namespace type; namespaces do not simply divide CPU and RAM into fixed slices.
+
+### Revision Checklist
+
+- [ ] Explain what a process and PID are.
+- [ ] Know the difference between `ps`, `ps aux`, and `top`.
+- [ ] Distinguish `SIGTERM`, `SIGKILL`, and `SIGSTOP`.
+- [ ] Understand `systemctl start` versus `systemctl enable`.
+- [ ] Explain the difference between foreground and background jobs.
+- [ ] Recall the purpose of `&`, `Ctrl + C`, `Ctrl + Z`, and `fg`.
+
+**Source credit:** TryHackMe — Linux Fundamentals Part 3, Task 5: Processes 101. These are personal learning and revision notes.
+
