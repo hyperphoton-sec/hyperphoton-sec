@@ -1178,4 +1178,100 @@ The exact isolation depends on the namespace type; namespaces do not simply divi
 - [ ] Recall the purpose of `&`, `Ctrl + C`, `Ctrl + Z`, and `fg`.
 
 **Source credit:** TryHackMe — Linux Fundamentals Part 3, Task 5: Processes 101. These are personal learning and revision notes.
+# Linux Fundamentals Part 3 — Additional Notes
+
+## Task 6: Automation — Cron Jobs
+
+### Key Concepts
+- `cron` is a Linux service used to schedule commands or scripts to run automatically.
+- `crontab` is used to manage scheduled cron jobs.
+- Cron schedule format:
+
+  `MIN HOUR DOM MON DOW COMMAND`
+
+### Useful Commands
+- `crontab -l` — List the current user's cron jobs.
+- `crontab -e` — Edit the current user's crontab.
+
+### Special Syntax
+- `*` — Any value.
+- `*/12` — Every 12 units in that field.
+- `@reboot` — Run the scheduled command when the system boots.
+
+### Example
+`0 */12 * * * command`
+
+This runs the command at minute 0 every 12 hours.
+
+**Remember:** Cron jobs automate recurring or scheduled tasks. Check the actual crontab configuration to determine when a job runs.
+
+---
+
+## Task 7: Maintaining Your System — Package Management
+
+### Key Concepts
+- A **package** contains software and the files needed to install it.
+- A **repository** is a source from which packages can be obtained.
+- APT is a package-management tool used on Ubuntu and other Debian-based distributions.
+- GPG keys help verify the authenticity of packages and repositories.
+
+### Useful Commands
+- `apt update` — Refresh package lists.
+- `apt install package-name` — Install a package.
+- `apt remove package-name` — Remove a package.
+- `add-apt-repository` — Add a software repository.
+- `add-apt-repository --remove repository-name` — Remove a repository.
+
+Repository configuration is commonly stored in `/etc/apt/sources.list` and `/etc/apt/sources.list.d/`.
+
+**Remember:** `apt update` refreshes package information; it does not itself upgrade all installed software.
+
+---
+
+## Task 8: Maintaining Your System — Logs
+
+### Key Concepts
+- Linux logs are commonly stored in `/var/log`.
+- Logs help administrators investigate system health, application errors, authentication attempts and suspicious activity.
+- Log rotation manages old logs and helps prevent log files from growing indefinitely.
+
+### Apache Logs
+Apache logs are commonly found in `/var/log/apache2/`.
+
+- `access.log` — Records HTTP requests made to the web server.
+- `error.log` — Records errors reported by Apache.
+- Rotated files, such as `access.log.1`, may contain older log entries.
+
+### Useful Commands
+- `cd /var/log/apache2` — Navigate to the Apache log directory.
+- `ls -la` — List files, including hidden files, with details.
+- `cat access.log` — Read the current access log if permissions allow.
+- `cat access.log.1` — Read the first rotated access log if permissions allow.
+
+### Reading an Access Log Entry
+
+Example:
+
+`10.9.232.111 - - [04/May/2021:18:18:16 +0000] "GET /catsanddogs.jpg HTTP/1.1" 200 51395`
+
+- `10.9.232.111` — Client IP address.
+- `GET` — HTTP request method.
+- `/catsanddogs.jpg` — Requested resource.
+- `200` — HTTP status code indicating success.
+
+**Practical takeaway:** Apache access logs can help identify which IP address made a request and which resource it requested.
+
+---
+
+## Revision Checklist
+
+- [ ] Explain what cron jobs do and interpret a basic schedule.
+- [ ] Distinguish `crontab -l` from `crontab -e`.
+- [ ] Explain the difference between `apt update` and `apt install`.
+- [ ] Locate Apache logs in `/var/log/apache2/`.
+- [ ] Identify a client IP, requested resource and HTTP status code in an access log.
+
+Source: TryHackMe — Linux Fundamentals Part 3.
+
+
 
